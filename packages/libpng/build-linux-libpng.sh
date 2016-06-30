@@ -95,15 +95,15 @@ make_mk(){
 
 make_mk
 
-exit 0
+#exit 0
 
 mkdir -p $D_OSNAME
 dest_exit $? "ERROR: mkdir $D_OSNAME"
 
-mv $D_WORKSPACE/build/include ./$D_OSNAME/
-dest_exit $? "ERROR: mv $D_WORKSPACE/build/include ./$D_OSNAME/"
+cp -R $D_WORKSPACE/build/include ./$D_OSNAME/
+dest_exit $? "ERROR: cp -R $D_WORKSPACE/build/include ./$D_OSNAME/"
 
-mv $D_WORKSPACE/build/lib ./$D_OSNAME/lib
-dest_exit $? "ERROR: mv $D_WORKSPACE/build/lib ./$D_OSNAME/lib"
+cp -R $D_WORKSPACE/build/lib ./$D_OSNAME/lib
+dest_exit $? "ERROR: cp -R $D_WORKSPACE/build/lib ./$D_OSNAME/lib"
 
 

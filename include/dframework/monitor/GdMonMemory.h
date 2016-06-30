@@ -64,7 +64,7 @@ printf("total=%lu, kernel=%lu, cached=%lu, buffer=%lu, free=%lu"
           return new GdMonMemory(sec);
       }
       inline virtual const char* title(){
-          return ((m_draw_no==0) ? "PACKET(A)" : "PACKET(B)");
+          return ((m_draw_no==0) ? "MEMORY (A)" : "MEMORY (B)");
       }
       inline virtual const char* savename(){
           return ((m_draw_no==0) ? "memory-a" : "memory-b");

@@ -22,6 +22,8 @@ fi
 cd ../
 D_PREV=`pwd`
 D_WITH_JPEG="--with-jpeg=$D_PREV/libjpeg/$D_OSNAME"
+#D_WITH_PNG="--with-png=$D_PREV/libpng/$D_OSNAME"
+#D_WITH_FT="--with-freetype=$D_PREV/libfreetype/$D_OSNAME"
 D_WITH_PNG="--with-png=$D_PREV/libpng/workspace/build"
 D_WITH_FT="--with-freetype=$D_PREV/libfreetype/workspace/build"
 
