@@ -1,0 +1,3 @@
+git remote add origin-cpp-graphic https://github.com/dframework/cpp-graphic.git
+git push -u origin-cpp-graphic master
+
