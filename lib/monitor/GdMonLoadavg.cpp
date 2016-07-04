@@ -16,7 +16,7 @@ namespace dframework {
 
   void GdMonLoadavg::getMax(struct max_st* max, sp<info>& info, int limit){
       int mk, mc = 0;
-      max->a = 100;
+      max->a = 0;
       for(mk=info->m_aLists.size(); (mk>0 && mc < limit); mk--, mc++){
         sp<GdMonLoadavg> e = info->m_aLists.get(mk-1);
         if( max->a < e->m_1 )
