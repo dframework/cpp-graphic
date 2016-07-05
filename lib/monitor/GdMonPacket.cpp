@@ -103,14 +103,8 @@ namespace dframework {
       String sText;
       String sZero = "0";
 
-      sText = String::format("%lu", max->b);
+      sText = Util::SizeToString(max->b); //String::format("%lu", max->b);
       m_img->small(m_g.cr.sx-3, 20, sText, m_cblack, 1);
-
-      //sText = String::format("%lu", max->p);
-      //m_img->small(m_g.cr.sx-3, m_g.m.y , sText, m_cblack, 1);
-
-      // zero
-      //m_img->small(m_g.cr.sx-3, m_g.m.y -14,  sZero, m_cblack, 1);
       m_img->small(m_g.cr.sx-3, m_g.cr.ey-14, sZero, m_cblack, 1);
 
       // ------------------------------------------------------------
