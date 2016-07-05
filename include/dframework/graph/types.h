@@ -37,6 +37,13 @@
                     : (d.datum + ceil((x*p)/m)+d.offset))   \
                  : d.v ) )
 
+#define DGD_GRAPH_DATA_PVD(d, a, b, x, p, m)                  \
+    (d.pv = ( (b && m)                                        \
+                 ? (((d.vector==1) || (d.vector==3))          \
+                    ? ((d.datum=a) - ceil((x*p)/m)+d.offset)  \
+                    : ((d.datum=a) + ceil((x*p)/m)+d.offset)) \
+                 : d.v ) )
+
 #define DGD_GRAPH_DATA_PVP(d, b, x, p, m)                   \
     (d->pv = ( (b && m)                                     \
                  ? (((d->vector==1) || (d->vector==3))      \
