@@ -37,8 +37,15 @@ dest_exit $? "ERROR: cp $D_DEST_FN $D_WORKSPACE/"
 cd $D_WORKSPACE
 dest_exit $? "ERROR: cd $D_WORKSPACE"
 
-tar xvf $D_DEST_FN
-dest_exit $? "ERROR: tar xvfz $D_DEST_FN"
+if test ! -d $D_DEST_NM ; then
+    tar -xzf $D_DEST_FN
+    if [ $? -ne 0 ]; then
+        unxz $D_DEST_FN
+        dest_exit $? "ERROR: unxz $D_DEST_FN"
+        tar -xf "${D_DEST_NM}.tar"
+        dest_exit $? "ERROR: tar -xzf $D_DEST_FN"
+    fi
+fi
 
 cd $D_DEST_NM
 dest_exit $? "ERROR: cd $D_DEST_NM"
