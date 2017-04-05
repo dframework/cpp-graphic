@@ -26,7 +26,7 @@ ifneq (${DDK_ENV_TARGET_OS}, "windows")
   LOCAL_LDFLAGS += -lz
 endif
 
-LOCAL_VERSION := 0.0.8
+LOCAL_VERSION := 0.0.10
 LOCAL_MODULE := libdframework-graphic
 
 include $(BUILD_STATIC_LIBRARY)
@@ -114,9 +114,10 @@ dist:
 ifeq (${DDK_ENV_TARGET_OS}, "windows")
    dist_pass=`sudo cat /root/sis-pass`
    dist_host=`sudo cat /root/sis-dist`
+   dist_port=`sudo cat /root/sis-port`
    org_PATH := ${DDK_ENV_TARGET_PKG}/${LOCAL_MODULE}
    org_NM := ${org_PATH}/libdframework-${pkg_subname}-${LOCAL_VERSION}.zip
-   sshpass -p${dist_pass} scp ${org_NM} ${dist_host}:/data/www-real/zonedrm/www/static/download/
+   sshpass -p${dist_pass} scp -P ${dist_port} ${org_NM} ${dist_host}:/data/www-real/zonedrm/www/static/download/
    if [ $? -ne 0 ]; then
        echo "    - cp ${org_NM} ... FAIL"
    else
@@ -129,10 +130,11 @@ eleq (${DDK_ENV_TARGET_OS}, "android")
 else
    dist_pass=`sudo cat /root/sis-pass`
    dist_host=`sudo cat /root/sis-dist`
+   dist_port=`sudo cat /root/sis-port`
    #dist_nm=$(call_package_get_pkgname "${LOCAL_MODULE}" "${LOCAL_VERSION}" "lib")
    dist_nm=$(call_package_get_pkgname ${LOCAL_MODULE} ${LOCAL_VERSION} lib)
    dist_prefix="${DDK_ENV_TARGET_PKG}/${LOCAL_MODULE}/sis/${dist_nm}"
-   sshpass -p${dist_pass} scp ${dist_prefix}.sh ${dist_host}:/data/www-real/zonedrm/www/static/download/
+   sshpass -p${dist_pass} scp -P ${dist_port} ${dist_prefix}.sh ${dist_host}:/data/www-real/zonedrm/www/static/download/
    if [ $? -ne 0 ]; then
        echo "    - cp ${dist_nm}.sh ... FAIL"
    else

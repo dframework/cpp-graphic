@@ -184,7 +184,7 @@ namespace dframework {
   }
 
   int  GDImage::boundsSafe(int x, int y){
-      gdImageBoundsSafe(IMAGE(m_image), x, y);
+      return gdImageBoundsSafe(IMAGE(m_image), x, y);
   }
 
   void GDImage::resolution(const unsigned int res_x, const unsigned int res_y){
