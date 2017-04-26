@@ -26,7 +26,7 @@ ifneq (${DDK_ENV_TARGET_OS}, "windows")
   LOCAL_LDFLAGS += -lz
 endif
 
-LOCAL_VERSION := 0.0.10
+LOCAL_VERSION := 0.0.12
 LOCAL_MODULE := libdframework-graphic
 
 include $(BUILD_STATIC_LIBRARY)
