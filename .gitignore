@@ -1,13 +1,13 @@
 /lib/graphic-removed
 /include/dframework/graphic
 /packages/libpng/linux
-/packages/libpng/src-linux
+#/packages/libpng/src-linux
 /packages/libpng/workspace
 /packages/libjpeg/linux
-/packages/libjpeg/src-linux
+#/packages/libjpeg/src-linux
 /packages/libjpeg/workspace
 /packages/libgd/linux
-/packages/libgd/src-linux
+#/packages/libgd/src-linux
 /packages/libgd/workspace
 /packages/libfreetype/linux
 /packages/libfreetype/src-linux

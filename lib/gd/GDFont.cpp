@@ -61,11 +61,12 @@ namespace dframework {
   }
 
   int GDFont::cacheSetup(){
-      return gdFontCacheSetup();
+      return -1;
+      //return gdFontCacheSetup();
   }
 
   void GDFont::cacheShutdown(){
-      gdFontCacheShutdown();
+      //gdFontCacheShutdown();
   }
 
 };
